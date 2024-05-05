@@ -39,7 +39,7 @@ const Home = () => {
   useEffect(() => {
     // if (currentAccount) {
     fetchNFTs().then((items) => {
-      console.log("akjskjsdnkjsdbkjv skfdv khj", items);
+      // console.log("akjskjsdnkjsdbkjv skfdv khj", items);
       setNfts(items.reverse());
       setNftsCopy(items);
     });

@@ -67,14 +67,14 @@ const author = () => {
     fetchMyNFTsOrListedNFTs("fetchItemsListed").then((items) => {
       setNfts(items);
 
-      console.log(nfts);
+      // console.log(nfts);
     });
   }, []);
 
   useEffect(() => {
     fetchMyNFTsOrListedNFTs("fetchMyNFTs").then((items) => {
       setMyNFTs(items);
-      console.log(myNFTs);
+      // console.log(myNFTs);
     });
   }, []);
 

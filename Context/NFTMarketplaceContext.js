@@ -165,7 +165,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
   //--- createSale FUNCTION
   const createSale = async (url, formInputPrice, isReselling, id) => {
     try {
-      console.log(url, formInputPrice, isReselling, id);
+      // console.log(url, formInputPrice, isReselling, id);
       const price = ethers.utils.parseUnits(formInputPrice, "ether");
 
       const contract = await connectingWithSmartContract();
@@ -205,7 +205,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
 
       const data = await contract.fetchMarketItems();
 
-      console.log("sdfsdfnsdjfn skjfdn skjl dk", data);
+      // console.log("sdfsdfnsdjfn skjfdn skjl dk", data);
 
       const items = await Promise.all(
         data.map(
@@ -240,7 +240,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
                 return data;
               })
               .catch((error) => console.error(error));
-            console.log("response", response);
+            // console.log("response", response);
             const { image, name, description } = await response;
 
             const price = ethers.utils.formatUnits(
@@ -373,7 +373,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
     try {
       if (currentAccount) {
         const contract = await connectToTransferFunds();
-        console.log(address, ether, message);
+        // console.log(address, ether, message);
 
         const unFormatedPrice = ethers.utils.parseEther(ether);
         // //FIRST METHOD TO TRANSFER FUND
@@ -395,7 +395,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
           message
         );
 
-        console.log(transaction);
+        // console.log(transaction);
 
         setLoading(true);
         transaction.wait();
@@ -429,7 +429,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
         }));
 
         setTransactions(readTransaction);
-        console.log(transactions);
+        // console.log(transactions);
       } else {
         console.log("On Ethereum");
       }
